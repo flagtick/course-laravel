@@ -37,8 +37,8 @@
                 <a class="btn btn-primary btn-block" href="index.html">Login</a>
             </div>
             <div class="text-center mt-3">
-                <p class="mb-2"><a  href="javascript:void(0);">Forgot Password</a></p>
-                <p class="text-dark mb-0">Don't have account?<a class="text-primary ms-1"  href="javascript:void(0);">Register</a></p>
+                <p class="mb-2"><a  href="">Forgot Password</a></p>
+                <p class="text-dark mb-0">Don't have account?<a class="text-primary ms-1"  href="">Register</a></p>
             </div>
         </form>
         <div class="card-body border-top-0 pb-6 pt-2">
@@ -56,7 +56,3 @@ export default {
     name: "Login"
 }
 </script>
-
-<style scoped>
-
-</style>

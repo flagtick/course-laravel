@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import AuthService from './services/auth'
-import Ls from './services/ls';
 
 /*
  |--------------------------------------------------------------------------
