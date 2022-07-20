@@ -20,7 +20,6 @@ import Register from './views/auth/Register.vue'
 // Dashboard
 import Dashboard from './views/admin/Dashboard.vue'
 
-
 // Error
 import NotFoundPage from './views/layouts/LayoutError.vue'
 
@@ -37,7 +36,7 @@ const routes = [
     {
         path: '/portal-admin',
         component: LayoutBasic,
-        redirect: 'admin/dashboard/basic'
+        redirect: 'admin/dashboard'
     },
     /*
      |--------------------------------------------------------------------------
@@ -50,7 +49,7 @@ const routes = [
         component: LayoutBasic,
         children: [
             {
-                path: 'dashboard/basic',
+                path: 'dashboard',
                 component: Dashboard,
                 name: 'dashboard'
             }
@@ -90,30 +89,30 @@ const router = new VueRouter({
 });
 router.beforeEach((to, from, next) => {
 
-    if (to.matched.some(m => m.meta.requiresAuth)) {
-        return AuthService.check().then(authenticated => {
-            if (!authenticated) {
-                return next({path: '/admin/authenticate/login'})
-            }
-
-            return next()
-        })
-    }
-
-    if (to.path === '/admin/authenticate/login' || to.path === '/admin/authenticate/register') {
-        if (Ls.get('auth.token') === null) {
-            return next();
-        } else {
-            return AuthService.check().then(authenticated => {
-                if (!authenticated) {
-                    Ls.remove('auth.token');
-                    return next();
-                } else {
-                    return next({path: '/admin/dashboard/basic'})
-                }
-            });
-        }
-    }
+    // if (to.matched.some(m => m.meta.requiresAuth)) {
+    //     return AuthService.check().then(authenticated => {
+    //         if (!authenticated) {
+    //             return next({path: '/admin/authenticate/login'})
+    //         }
+    //
+    //         return next()
+    //     })
+    // }
+    //
+    // if (to.path === '/admin/authenticate/login' || to.path === '/admin/authenticate/register') {
+    //     if (Ls.get('auth.token') === null) {
+    //         return next();
+    //     } else {
+    //         return AuthService.check().then(authenticated => {
+    //             if (!authenticated) {
+    //                 Ls.remove('auth.token');
+    //                 return next();
+    //             } else {
+    //                 return next({path: '/admin/dashboard'})
+    //             }
+    //         });
+    //     }
+    // }
     return next();
 });
 export default router

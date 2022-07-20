@@ -4,14 +4,6 @@ mix.js('resources/js/app.js', 'public/js')
     .sass('resources/sass/app.scss', 'public/css')
     .version();
 
-if (!mix.inProduction()) {
-    mix.webpackConfig({
-        devtool: 'source-map'
-    }).sourceMaps()
-} else {
-    mix.version()
-}
-
 mix.webpackConfig(webpack => {
     return {
         plugins: [

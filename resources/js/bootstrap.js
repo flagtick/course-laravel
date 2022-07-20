@@ -1,14 +1,7 @@
-import VueRouter from 'vue-router'
 import Vuelidate from 'vuelidate'
 import Ls from './services/ls'
 
 window._ = require('lodash');
-
-import { Form, HasError, AlertError } from 'vform';
-
-window.Form = Form;
-Vue.component(HasError.name, HasError);
-Vue.component(AlertError.name, AlertError);
 
 import DataTable from 'laravel-vue-datatable';
 Vue.use(DataTable);
@@ -44,11 +37,6 @@ window.Fire = new Vue();
  * for JavaScript based Bootstrap features such as modals and tabs. This
  * code may be modified to fit the specific needs of your application.
  */
-
-try {
-    global.notie = require('notie');
-    global.toastr = require('toastr');
-} catch (e) {}
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

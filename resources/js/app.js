@@ -4,7 +4,6 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 import router from './router.js'
-import i18n from './lang/i18n'
 
 // Loading indicator
 import Loading from 'vue-loading-overlay';
